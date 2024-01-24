@@ -1,0 +1,50 @@
+.title {
+	font-size: 24px;
+	font-weight: 700;
+	line-height: 29px;
+	color: #1c2a39;
+	text-transform: uppercase;
+	margin-bottom: 12px;
+}
+
+.content {
+	display: inline-flex;
+	gap: 0 17px;
+}
+
+.profileInfo {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	max-height: 215px;
+}
+
+.label {
+	font-size: 12px;
+	font-weight: 700;
+	line-height: 15px;
+	color: #000;
+	margin-bottom: 8px;
+}
+
+.signOut {
+	width: fit-content;
+	a {
+		font-weight: 700;
+		color: #1c2a39;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 0 10px;
+	}
+	svg {
+		width: 20px;
+		height: 20px;
+	}
+
+	&:hover {
+		* {
+			color: darken(#1c2a39, 10%);
+		}
+	}
+}

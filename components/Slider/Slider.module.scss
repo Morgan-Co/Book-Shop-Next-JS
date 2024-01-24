@@ -1,0 +1,27 @@
+.slider {
+	margin-bottom: 88px;
+}
+
+.sliderImages {
+	display: flex;
+	overflow: hidden;
+}
+
+.bullets {
+	display: flex;
+	justify-content: center;
+	gap: 10px;
+	padding: 17px 0;
+}
+
+.bullet {
+	width: 12px;
+	height: 12px;
+	display: inline-block;
+	background: #efeef6;
+	border-radius: 50%;
+}
+
+.activeBullet {
+	background: #9e98dc;
+}

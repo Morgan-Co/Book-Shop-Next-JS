@@ -1,0 +1,19 @@
+.button {
+	width: 176px;
+	height: 45px;
+	background: none;
+	color: #4c3db2;
+	font-size: 8px;
+	font-weight: 700;
+	text-transform: uppercase;
+	border: 1px solid #4c3db2;
+	cursor: pointer;
+
+	&:hover {
+		background: #dfdfdf;
+	}
+
+	&:active {
+		background: #b8b8b8;
+	}
+}

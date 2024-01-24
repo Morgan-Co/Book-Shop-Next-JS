@@ -1,0 +1,35 @@
+.aboutMe {
+	width: 353px;
+	height: 345px;
+	background: #ffe0e2;
+	box-shadow: 0px 24px 36px 0px #35315447;
+	padding: 17px 0 0 0;
+	box-sizing: border-box;
+}
+
+.aboutMeTitle {
+	font-size: 12px;
+	font-weight: 700;
+	line-height: 15px;
+	text-transform: uppercase;
+	text-align: center;
+	margin-bottom: 29px;
+}
+
+.form {
+}
+
+.textarea {
+	width: 325px;
+	height: 255px;
+	margin: 0 auto;
+	display: block;
+	background: none;
+	border: none;
+	resize: none;
+	font-size: 12px;
+	font-weight: 600;
+	line-height: 15px;
+	color: #5c6a79;
+	// outline: none;
+}
