@@ -4,6 +4,7 @@ import styles from './AuthCard.module.scss'
 import { FaGoogle } from 'react-icons/fa'
 import { Montserrat } from 'next/font/google'
 import { useSearchParams } from 'next/navigation'
+import { GiDeathStar } from 'react-icons/gi'
 
 const montserrat = Montserrat({
 	subsets: ['cyrillic', 'latin'],
@@ -45,7 +46,7 @@ const AuthCard = () => {
 							Log In
 						</button>
 						<button
-							onClick={() => signIn('google', {callbackUrl})}
+							onClick={() => signIn('google', { callbackUrl })}
 							className={styles.googleButton}
 							type='button'
 						>
@@ -54,8 +55,11 @@ const AuthCard = () => {
 					</div>
 				</form>
 			</div>
+
 		</div>
 	)
 }
 
 export default AuthCard
+
+

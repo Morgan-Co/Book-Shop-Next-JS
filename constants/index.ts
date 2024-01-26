@@ -1,9 +1,9 @@
 import Profile from '../public/Profile.svg'
 import Basket from '../public/Basket.svg'
 import type { Categories, NavLink, SliderImages, UserSection } from './type'
-import banner1 from '../public/banner1.png'
-import banner2 from '../public/banner2.png'
-import banner3 from '../public/banner3.png'
+import banner1 from '@/public/banner1.png'
+import banner2 from '@/public/banner2.png'
+import banner3 from '@/public/banner3.png'
 
 export const navLinks: NavLink[] = [
 	{

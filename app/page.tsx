@@ -1,17 +1,13 @@
-// import { Open_Sans } from 'next/font/google'
 import Products from '@/components/Products/Products'
 import styles from './page.module.scss'
 import Categories from '@/components/Categories/Categories'
 import Slider from '@/components/Slider/Slider'
-// import AuthCard from '@/components/AuthCard/AuthCard'
-
-// const openSans = Open_Sans({ subsets: ['latin', 'cyrillic'], weight: ['400'] })
 
 
 
 /*
 	TODO:
-		- Придумать оптимизированный способ получение и обработки книг
+		- Придумать оптимизированный способ получение и обработки книг 
 		- Придумать способ загрузки книг без дубликатов
 		- Настроить отправку товаров в корзину
 		- Сделать мобильную версию
@@ -20,7 +16,7 @@ import Slider from '@/components/Slider/Slider'
 		- Сделать Popup отдельной карточки книги
 		- Доделать аутентификацию пользователя через поля ввода
 		- Сделать валидацию форм и кастомизировать поле пароля
-		- сделать SEO
+		- Сделать SEO
 		- Ускорить загрузку сайта
 		- Оптимизация
 		- Тесты

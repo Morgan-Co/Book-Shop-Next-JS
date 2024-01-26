@@ -100,3 +100,38 @@
 	line-height: 16px;
 	color: #1c2a39;
 }
+
+.inTheCard {
+	width: 176px;
+	height: 45px;
+	border: 1px solid #eeedf5;
+	font-size: 8px;
+	font-weight: 700;
+	line-height: 10px;
+	background: none;
+	cursor: pointer;
+	color: #5C6A79;
+	transition: background 100ms ease;
+
+	&:hover {
+		background: #ececec;
+	}
+
+	&:active {
+		background: #b8b8b8;
+	}
+}
+
+.notForSale {
+	max-width: 100%;
+	height: 45px;
+	border: 1px solid #eeedf5;
+	font-size: 8px;
+	font-weight: 700;
+	line-height: 10px;
+	background: none;
+	color: #ff4149;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

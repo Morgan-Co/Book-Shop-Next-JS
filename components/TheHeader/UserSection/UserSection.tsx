@@ -11,9 +11,16 @@ import Link from 'next/link'
 import { useSession } from 'next-auth/react'
 import { useAppDispatch, useAppSelector } from '@/redux/hooks'
 import { togglePopup } from '@/redux/features/popup/popupSlice'
+import { Montserrat } from 'next/font/google'
+
+const montserrat = Montserrat({
+	subsets: ['latin'],
+	weight: ['500'],
+})
 
 const UserSection = () => {
 	const dispatch = useAppDispatch()
+	const { books } = useAppSelector(state => state.books)
 	const { isOpen } = useAppSelector(state => state.popup)
 	const [isCursorOverPopup, setCursorOverPopup] = useState<boolean>(false)
 	const session = useSession()
@@ -50,17 +57,25 @@ const UserSection = () => {
 				</button>
 			)}
 			{session.data ? (
-				<Link href={'/basket'} className={styles.userButton}>
-					<Image src={Basket} alt='Img' />
-				</Link>
-			) : (
-				<button
-					type='button'
-					onClick={() => dispatch(togglePopup())}
-					className={styles.userButton}
+				<Link
+					href={'/basket'}
+					className={`${styles.userButton} ${styles.basketIconBody}`}
 				>
 					<Image src={Basket} alt='Img' />
-				</button>
+					{books.length > 0 && (
+						<span className={styles.booksCount}>{books.length}</span>
+					)}
+				</Link>
+			) : (
+				<div className={styles.basketIconBody}>
+					<button
+						type='button'
+						onClick={() => dispatch(togglePopup())}
+						className={`${styles.userButton} ${montserrat.className}`}
+					>
+						<Image src={Basket} alt='Img' />
+					</button>
+				</div>
 			)}
 			<AnimatePresence>
 				{isOpen && (

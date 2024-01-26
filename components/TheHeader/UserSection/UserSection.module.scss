@@ -14,6 +14,27 @@
 .authBody {
 	position: absolute;
 	top: 35px;
-	left: -100px;
+	left: -115px;
 	z-index: 2;
+}
+
+.basketIconBody {
+	position: relative;
+}
+
+.booksCount {
+	position: absolute;
+	top: 8px;
+	left: 5px;
+	width: 13px;
+	height: 13px;
+	background: #ff353a;
+	border-radius: 50%;
+	color: #ffffff;
+	font-size: 10px;
+	font-weight: 500;
+	line-height: 12px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }

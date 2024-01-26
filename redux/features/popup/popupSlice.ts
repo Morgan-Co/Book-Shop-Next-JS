@@ -4,6 +4,7 @@ const popupSlice = createSlice({
 	name: 'popup',
 	initialState: {
 		isOpen: false,
+		data: []
 	},
 	reducers: {
 		togglePopup: (state) => {
