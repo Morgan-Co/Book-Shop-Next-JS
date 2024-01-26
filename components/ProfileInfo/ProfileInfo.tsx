@@ -10,6 +10,7 @@ import { signOut, useSession } from 'next-auth/react'
 
 const ProfileInfo = () => {
 	const session = useSession()
+	
 	return (
 		<div>
 			<h1 className={styles.title}>Profile</h1>
