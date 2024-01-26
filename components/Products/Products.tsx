@@ -31,7 +31,7 @@
 // export default Products
 
 'use client'
-import { getAllBooks, getBooksWithCategory } from '@/services/getBooks'
+import { getBooks } from '@/services/getBooks'
 import { Book } from '@/types/type'
 import Card from '../Card/Card'
 import styles from './Products.module.scss'
@@ -45,7 +45,7 @@ const Products = () => {
 	const [startIndex, setStartIndex] = useState(0)
 
 	const fetchBooks = async () => {
-		const { items } = await getBooksWithCategory(category, 6)
+		const { items } = await getBooks(category, startIndex)
 		console.log(items)
 
 		if (items) {
@@ -83,7 +83,6 @@ const Products = () => {
 				<Button
 					func={() => {
 						fetchBooks()
-						// console.log(books)
 					}}
 				>
 					Load more

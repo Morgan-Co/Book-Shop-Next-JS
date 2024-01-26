@@ -1,15 +1,9 @@
-export const getAllBooks = async () => {
-	const response = await fetch(`http://localhost:3000/api/all-books`)
-	if (!response.ok) throw new Error('Unable to fetch posts.')
-	return response.json()
-}
-
-export const getBooksWithCategory = async (
+export const getBooks = async (
 	category: string,
 	index?: number
 ) => {
 	const response = await fetch(
-		`http://localhost:3000/api/books-category?q=${category}&index=${index}`
+		`http://localhost:3000/api/all-books?q=${category}&index=${index}`
 	)
 	if (!response.ok) throw new Error('Unable to fetch posts.')
 	return response.json()

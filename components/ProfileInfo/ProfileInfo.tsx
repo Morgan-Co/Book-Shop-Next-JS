@@ -24,11 +24,11 @@ const ProfileInfo = () => {
 						<h4 className={styles.label}>Your Email</h4>
 						<h2>{session?.data?.user?.email}</h2>
 					</div>
-					<Button>Edit Profile</Button>
+					<Button func={()=> {}}>Edit Profile</Button>
 				</div>
 			</div>
 			<div className={styles.signOut}>
-				<Link href={'#'} onClick={() => signOut({ callbackUrl: '/' })}>
+				<Link href='/' onClick={() => signOut({ callbackUrl: '/' })}>
 					<VscSignOut /> Sing Out
 				</Link>
 			</div>
