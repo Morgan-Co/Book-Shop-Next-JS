@@ -1,24 +1,16 @@
-import { Book } from '@/types/type'
-import { Open_Sans } from 'next/font/google'
-import Image from 'next/image'
-import styles from './Card.module.scss'
-import StarRating from '@/utils/StarRating'
-import { formatPrice } from '@/utils/formatPrice'
 import { motion } from 'framer-motion'
-import Link from 'next/link'
+import styles from './BookInfo.module.scss'
+import { Book } from '@/types/type'
+import Image from 'next/image'
 import NoImage from '@/public/NoImage.png'
-import CardButton from './CardButton/CardButton'
-import { SetStateAction } from 'react'
+import { formatPrice } from '@/utils/formatPrice'
+import StarRating from '@/utils/StarRating'
+import CardButton from '../Card/CardButton/CardButton'
+import { Open_Sans } from 'next/font/google'
 
 const openSans = Open_Sans({ subsets: ['latin', 'cyrillic'], weight: ['400'] })
 
-const Card = ({
-	book,
-	setSelectedId,
-}: {
-	book: Book
-	setSelectedId: React.Dispatch<SetStateAction<Book | null>>
-}) => {
+const BookInfo = ({ book }: { book: Book }) => {
 	const image = book.volumeInfo.imageLinks
 		? book.volumeInfo.imageLinks.thumbnail
 		: NoImage
@@ -33,16 +25,20 @@ const Card = ({
 		? `${book.volumeInfo.ratingsCount} reviews`
 		: 'no reviews'
 
-	const price = formatPrice(book) 
-
+	const price = formatPrice(book)
 	return (
-		<motion.div layoutId={book.id} className={styles.card}>
+		<motion.div
+			onClick={e => e.stopPropagation()}
+			layoutId={book.id}
+			className={styles.bookInfo}
+		>
+			<button className={styles.closeButton}>Close</button>
 			<div className={styles.left}>
 				<Image src={image} alt={head} width={212} height={300} />
 			</div>
 			<div className={styles.right}>
 				<div className={styles.content}>
-					<div onClick={()=> setSelectedId(book)} className={styles.title}>
+					<div className={styles.title}>
 						<h6 className={`${styles.authors} ${openSans.className}`}>
 							{authors}
 						</h6>
@@ -67,4 +63,4 @@ const Card = ({
 	)
 }
 
-export default Card
+export default BookInfo

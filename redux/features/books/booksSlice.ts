@@ -22,14 +22,20 @@ const booksSlice = createSlice({
 			state.books = state.books.filter(book => book.id !== action.payload)
 		},
 		countTotalPrice: (state, action: PayloadAction<number>) => {
-			state.totalPrice = state.books.reduce(
-				(accumulator, currentValue) =>
-					accumulator + currentValue.saleInfo.retailPrice.amount * action.payload,
-				0
-			)
+			if (state.books.length > 0) {
+				state.totalPrice = state.books.reduce(
+					(accumulator, currentValue) =>
+						accumulator +
+						currentValue.saleInfo.retailPrice.amount * action.payload,
+					0
+				)
+				return
+			}
+			state.totalPrice = 0
 		},
 	},
 })
 
 export default booksSlice.reducer
-export const { addBookInBasket, deleteBookFromBasket, countTotalPrice } = booksSlice.actions
+export const { addBookInBasket, deleteBookFromBasket, countTotalPrice } =
+	booksSlice.actions

@@ -4,12 +4,11 @@ import Categories from '@/components/Categories/Categories'
 import Slider from '@/components/Slider/Slider'
 
 
-
 /*
 	TODO:
 		- Придумать оптимизированный способ получение и обработки книг 
 		- Придумать способ загрузки книг без дубликатов
-		- Настроить отправку товаров в корзину
+		- Настроить отправку товаров в корзину +
 		- Сделать мобильную версию
 		- Доделать анимации
 		- Сделать Preloader и страницу ошибки
@@ -34,7 +33,7 @@ import Slider from '@/components/Slider/Slider'
 
 
 
-export default async function Home() {
+export default function Home() {
 	return (
 		<>
 			<Slider />

@@ -2,7 +2,7 @@
 
 import Profile from '@/public/Profile.svg'
 import Basket from '@/public/Basket.svg'
-import { useContext, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import styles from './UserSection.module.scss'
 import AuthCard from '@/components/AuthCard/AuthCard'
 import Image from 'next/image'

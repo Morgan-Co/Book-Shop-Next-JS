@@ -36,58 +36,55 @@ import { Book } from '@/types/type'
 import Card from '../Card/Card'
 import styles from './Products.module.scss'
 import { useAppSelector } from '@/redux/hooks'
-import { useCallback, useEffect, useMemo, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import Button from '../ui/Button/Button'
+import { AnimatePresence, Variants, motion } from 'framer-motion'
+import { books } from '@/data/books'
+import BookInfo from '../BookInfo/BookInfo'
 
 const Products = () => {
-	const [books, setBooks] = useState([] as Book[])
+	const [selectedBook, setSelectedBook] = useState<Book | null>(null)
+	// const [books, setBooks] = useState([] as Book[])
 	const { category } = useAppSelector(state => state.categories)
 	const [startIndex, setStartIndex] = useState(0)
 
-	const fetchBooks = async () => {
-		const { items } = await getBooks(category, startIndex)
-		console.log(items)
-
-		if (items) {
-			setBooks(prev => [...prev, ...items])
-		}
-	}
-
-	useEffect(() => {
-		fetchBooks()
-	}, [])
-
 	// const fetchBooks = useCallback( async () => {
-	// 	const data = await getBooksWithCategory(category, startIndex)
-	// 	console.log(data)
+	// 	const { items } = await getBooks(category, startIndex)
+	// 	console.log(items)
 
-	// 	if (data.items && books.length) {
-	// 		setBooks(prev => [...prev, ...data.items])
-	// 		return
+	// 	if (items) {
+	// 		setBooks(prev => [...prev, ...items])
 	// 	}
-	// 	setBooks(data.items)
-	// 	setStartIndex(startIndex + 6)
-	// }, [])
+	// }, [category, startIndex])
 
 	// useEffect(() => {
 	// 	fetchBooks()
-	// }, [])
+	// }, [fetchBooks])
 
 	return (
 		<div className={styles.productsBody}>
 			<div className={styles.products}>
 				{books.length > 0 &&
-					books.map(book => <Card key={book.id} book={book} />)}
+					books.map(book => (
+						<Card key={book.id} book={book} setSelectedId={setSelectedBook} />
+					))}
 			</div>
 			<div className={styles.loadMore}>
 				<Button
 					func={() => {
-						fetchBooks()
+						// fetchBooks()
 					}}
 				>
 					Load more
 				</Button>
 			</div>
+			{selectedBook && (
+				<AnimatePresence>
+					<motion.div onClick={()=> setSelectedBook(null)} className={styles.bookInfoBody}>
+						<BookInfo book={selectedBook} />
+					</motion.div>
+				</AnimatePresence>
+			)}
 		</div>
 	)
 }

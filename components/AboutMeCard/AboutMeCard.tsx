@@ -10,7 +10,7 @@ const AboutMeCard = () => {
 	return (
 		<div className={styles.aboutMe}>
 			<h3 className={styles.aboutMeTitle}>About Me</h3>
-			<form action='' className={styles.form}>
+			<form action='#' className={styles.form}>
 				<textarea className={`${styles.textarea} ${montserrat.className}`} />
 			</form>
 		</div>

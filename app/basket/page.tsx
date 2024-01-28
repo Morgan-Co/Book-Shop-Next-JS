@@ -4,10 +4,17 @@ import BasketCard from '@/components/BasketCard/BasketCard'
 import styles from './page.module.scss'
 import { basketParams } from '@/constants'
 import Button from '@/components/ui/Button/Button'
-import { useAppSelector } from '@/redux/hooks'
+import { useAppDispatch, useAppSelector } from '@/redux/hooks'
+import { useEffect } from 'react'
+import { countTotalPrice } from '@/redux/features/books/booksSlice'
 
 export default function ShopBasket() {
 	const { books, totalPrice } = useAppSelector(state => state.books)
+	const dispatch = useAppDispatch()
+
+	useEffect(() => {
+		dispatch(countTotalPrice(1))
+	}, [books, dispatch])
 
 	return (
 		<div>

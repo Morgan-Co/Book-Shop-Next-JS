@@ -4,7 +4,6 @@ import './globals.scss'
 import TheHeader from '@/components/TheHeader/TheHeader'
 import Providers from '@/components/Providers/Providers'
 import StoreProvider from './StoreProvider'
-import { Provider } from 'react-redux'
 
 const montserrat = Montserrat({
 	subsets: ['latin', 'cyrillic'],

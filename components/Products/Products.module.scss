@@ -15,3 +15,17 @@
 	justify-content: center;
 	margin-top: 96px;
 }
+
+.bookInfoBody {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	display: grid;
+	top: 0;
+	left: 0;
+	backdrop-filter: blur(5px);
+	background: #00000063;
+	place-items: center;
+	overflow-y: scroll;
+	cursor: pointer;
+}

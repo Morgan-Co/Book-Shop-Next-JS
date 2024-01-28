@@ -4,7 +4,6 @@ import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import { sliderImages } from '@/constants'
 import styles from './Slider.module.scss'
-import banner3 from '@/public/banner3.png'
 
 const Slider = () => {
 	const [imgIndex, setImgIndex] = useState(0)

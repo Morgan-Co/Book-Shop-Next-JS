@@ -1,3 +1,22 @@
+.closeButton {
+	position: absolute;
+}
+
+.bookInfo {
+	max-width: 32rem;
+	width: 100%;
+	// height: 450px;
+	background: #fff;
+	position: absolute;
+	top: 25%;
+	// left: 40%;
+	cursor: default;
+	overflow: hidden;
+
+	display: flex;
+	padding: 4rem;
+}
+
 .card {
 	display: flex;
 	width: 424px;
@@ -9,7 +28,7 @@
 }
 
 .right {
-	display: flex; 
+	display: flex;
 	justify-content: end;
 	align-items: center;
 	width: 100%;
@@ -93,7 +112,7 @@
 	color: #5c6a79;
 	text-transform: capitalize;
 	display: -webkit-box;
-	-webkit-line-clamp: 3;
+	-webkit-line-clamp: 8;
 	-webkit-box-orient: vertical;
 	overflow: hidden;
 	text-overflow: ellipsis;
@@ -115,7 +134,7 @@
 	line-height: 10px;
 	background: none;
 	cursor: pointer;
-	color: #5C6A79;
+	color: #5c6a79;
 	transition: background 100ms ease;
 
 	&:hover {
