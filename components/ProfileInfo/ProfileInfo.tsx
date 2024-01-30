@@ -2,11 +2,11 @@
 
 import Image from 'next/image'
 import workingPeople from '@/public/workingPeople.png'
-import Button from '@/components/ui/Button/Button'
 import { VscSignOut } from 'react-icons/vsc'
 import styles from './ProfileInfo.module.scss'
 import Link from 'next/link'
 import { signOut, useSession } from 'next-auth/react'
+import PrimaryButton from '../ui/Buttons/PrimaryButton/PrimaryButton'
 
 const ProfileInfo = () => {
 	const session = useSession()
@@ -25,7 +25,7 @@ const ProfileInfo = () => {
 						<h4 className={styles.label}>Your Email</h4>
 						<h2>{session?.data?.user?.email}</h2>
 					</div>
-					<Button func={()=> {}}>Edit Profile</Button>
+					<PrimaryButton func={()=> {}}>Edit Profile</PrimaryButton>
 				</div>
 			</div>
 			<div className={styles.signOut}>

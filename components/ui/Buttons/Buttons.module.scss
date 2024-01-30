@@ -1,0 +1,54 @@
+.primaryButton {
+	width: 176px;
+	height: 45px;
+	background: none;
+	color: #4c3db2;
+	font-size: 8px;
+	font-weight: 700;
+	text-transform: uppercase;
+	border: 1px solid #4c3db2;
+	cursor: pointer;
+
+	&:hover {
+		background: #dfdfdf;
+	}
+
+	&:active {
+		background: #b8b8b8;
+	}
+}
+
+
+.googleButton {
+	width: 32px;
+	height: 32px;
+	background: #db4437;
+	color: #ffffff;
+	border: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	transition: background 50ms ease;
+
+	&:hover {
+		background: darken(#db4437, 10%);
+	}
+}
+
+.signInButton {
+	width: 130px;
+	height: 32px;
+	background: #9e98dc;
+	font-size: 14px;
+	line-height: 17px;
+	border: none;
+	text-transform: uppercase;
+	color: #ffffff;
+	cursor: pointer;
+	transition: background 50ms ease;
+
+	&:hover {
+		background: darken(#9e98dc, 10%);
+	}
+}

@@ -1,11 +1,15 @@
 .slider {
 	margin-bottom: 88px;
-
+	overflow: hidden;
 }
 
 .sliderImages {
 	display: flex;
 	overflow: hidden;
+	max-width: 1120px;
+	height: 702px;
+	width: 100%;
+	position: relative;
 }
 
 .bullets {

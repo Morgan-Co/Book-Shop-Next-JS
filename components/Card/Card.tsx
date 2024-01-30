@@ -33,16 +33,22 @@ const Card = ({
 		? `${book.volumeInfo.ratingsCount} reviews`
 		: 'no reviews'
 
-	const price = formatPrice(book) 
+	const price = formatPrice(book)
 
 	return (
-		<motion.div layoutId={book.id} className={styles.card}>
+		<motion.div
+			//  layoutId={book.id}
+			className={styles.card}
+		>
 			<div className={styles.left}>
 				<Image src={image} alt={head} width={212} height={300} />
 			</div>
 			<div className={styles.right}>
 				<div className={styles.content}>
-					<div onClick={()=> setSelectedId(book)} className={styles.title}>
+					<div
+					//  onClick={() => setSelectedId(book)}
+					 className={styles.title}
+					 >
 						<h6 className={`${styles.authors} ${openSans.className}`}>
 							{authors}
 						</h6>

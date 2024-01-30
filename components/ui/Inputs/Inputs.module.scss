@@ -1,0 +1,19 @@
+.input {
+	display: block;
+	padding: 10px 9px 10px 9px;
+	width: 176px;
+	border: 1px solid #4c3db2;
+	font-size: 12px;
+	font-weight: 700;
+	line-height: 15px;
+	color: #4c3db2;
+	box-sizing: border-box;
+	margin-top: 9px;
+	z-index: 5;
+	position: relative;
+}
+
+.errorInput {
+	border: 1px solid #ff353a;
+	color: #ff353a;
+}

@@ -1,4 +1,4 @@
-import Button from '@/components/ui/Button/Button'
+import { PrimaryButton } from '@/components/ui/Buttons'
 import { addBookInBasket, deleteBookFromBasket } from '@/redux/features/books/booksSlice'
 import { useAppDispatch, useAppSelector } from '@/redux/hooks'
 import { Book } from '@/types/type'
@@ -23,13 +23,13 @@ const CardButton = ({book}: {book: Book}) => {
 		if (session.data) {
 			if (!books.some(storageBook => storageBook.id === book.id)) {
 				return (
-					<Button
+					<PrimaryButton
 						func={() => {
 							dispatch(addBookInBasket(book))
 						}}
 					>
 						Buy Now
-					</Button>
+					</PrimaryButton>
 				)
 			} else {
 				return (
@@ -46,13 +46,13 @@ const CardButton = ({book}: {book: Book}) => {
 			}
 		} else {
 			return (
-				<Button
+				<PrimaryButton
 					func={() => {
 						dispatch(togglePopup())
 					}}
 				>
 					Buy Now
-				</Button>
+				</PrimaryButton>
 			)
 		}
 	}

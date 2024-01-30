@@ -19,6 +19,7 @@ const montserrat = Montserrat({
 })
 
 const UserSection = () => {
+	const innerWidth = window.innerWidth
 	const dispatch = useAppDispatch()
 	const { books } = useAppSelector(state => state.books)
 	const { isOpen } = useAppSelector(state => state.popup)
@@ -38,16 +39,11 @@ const UserSection = () => {
 
 	return (
 		<div className={styles.userSection}>
-			{/* {userSection.map(btn => (
-			<button key={btn.label}>
-				<Image src={btn.url} alt={btn.url} />
-			</button>
-		))} */}
 			{session.data ? (
 				<Link href={'/profile'} className={styles.userButton}>
 					<Image src={Profile} alt='Img' />
 				</Link>
-			) : (
+			) : innerWidth > 600 ? (
 				<button
 					className={styles.userButton}
 					onClick={() => dispatch(togglePopup())}
@@ -55,6 +51,10 @@ const UserSection = () => {
 				>
 					<Image src={Profile} alt='Img' />
 				</button>
+			) : (
+				<Link href='/signin' className={styles.userButton} type='button'>
+					<Image src={Profile} alt='Img' />
+				</Link>
 			)}
 			{session.data ? (
 				<Link

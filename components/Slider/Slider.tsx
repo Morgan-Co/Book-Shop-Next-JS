@@ -8,28 +8,29 @@ import styles from './Slider.module.scss'
 const Slider = () => {
 	const [imgIndex, setImgIndex] = useState(0)
 
-	useEffect(() => {
-		const interval = setInterval(() => {
-			setImgIndex(prev => {
-				if (prev === 2) return 0
-				return prev + 1
-			})
-		}, 5000)
+	// useEffect(() => {
+	// 	const interval = setInterval(() => {
+	// 		setImgIndex(prev => {
+	// 			if (prev === 2) return 0
+	// 			return prev + 1
+	// 		})
+	// 	}, 5000)
 
-		return () => clearInterval(interval)
-	}, [])
+	// 	return () => clearInterval(interval)
+	// }, [])
 
 	return (
 		<div className={styles.slider}>
 			<div className={styles.sliderImages}>
 				{sliderImages.map(({ src, alt }) => (
 					<Image
-						style={{ translate: `${-100 * imgIndex}%`, transition: `200ms` }}
 						key={alt}
+						style={{ translate: `${-100 * imgIndex}%`, transition: `200ms` }}
 						src={src}
 						alt={alt}
-						width={1120}
-						height={702}
+						// width={1120}
+						// height={702}
+						fill={true}
 					/>
 				))}
 			</div>

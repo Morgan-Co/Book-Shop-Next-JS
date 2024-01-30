@@ -53,6 +53,15 @@
 	position: relative;
 }
 
+.errorMessage {
+	color: #ff353a;
+	font-size: 8px;
+	font-weight: 700;
+	line-height: 10px;
+	margin: 9px 0 0 0;
+	z-index: 0;
+	position: relative;
+}
 
 .errorInput {
 	border: 1px solid #ff353a;
@@ -68,4 +77,36 @@
 	bottom: 0;
 }
 
+.button {
+	width: 130px;
+	height: 32px;
+	background: #9e98dc;
+	font-size: 14px;
+	line-height: 17px;
+	border: none;
+	text-transform: uppercase;
+	color: #ffffff;
+	cursor: pointer;
+	transition: background 50ms ease;
 
+	&:hover {
+		background: darken(#9e98dc, 10%);
+	}
+}
+
+.googleButton {
+	width: 32px;
+	height: 32px;
+	background: #db4437;
+	color: #ffffff;
+	border: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	transition: background 50ms ease;
+
+	&:hover {
+		background: darken(#db4437, 10%);
+	}
+}

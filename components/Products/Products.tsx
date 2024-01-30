@@ -37,29 +37,28 @@ import Card from '../Card/Card'
 import styles from './Products.module.scss'
 import { useAppSelector } from '@/redux/hooks'
 import { useCallback, useEffect, useState } from 'react'
-import Button from '../ui/Button/Button'
-import { AnimatePresence, Variants, motion } from 'framer-motion'
-import { books } from '@/data/books'
+// import { books } from '@/data/books'
 import BookInfo from '../BookInfo/BookInfo'
+import { PrimaryButton } from '../ui/Buttons'
 
 const Products = () => {
 	const [selectedBook, setSelectedBook] = useState<Book | null>(null)
-	// const [books, setBooks] = useState([] as Book[])
+	const [books, setBooks] = useState([] as Book[])
 	const { category } = useAppSelector(state => state.categories)
 	const [startIndex, setStartIndex] = useState(0)
 
-	// const fetchBooks = useCallback( async () => {
-	// 	const { items } = await getBooks(category, startIndex)
-	// 	console.log(items)
+	const fetchBooks = useCallback( async () => {
+		const { items } = await getBooks(category, startIndex)
+		console.log(items)
 
-	// 	if (items) {
-	// 		setBooks(prev => [...prev, ...items])
-	// 	}
-	// }, [category, startIndex])
+		if (items) {
+			setBooks(prev => [...prev, ...items])
+		}
+	}, [category, startIndex])
 
-	// useEffect(() => {
-	// 	fetchBooks()
-	// }, [fetchBooks])
+	useEffect(() => {
+		fetchBooks()
+	}, [fetchBooks])
 
 	return (
 		<div className={styles.productsBody}>
@@ -70,21 +69,21 @@ const Products = () => {
 					))}
 			</div>
 			<div className={styles.loadMore}>
-				<Button
+				<PrimaryButton
 					func={() => {
 						// fetchBooks()
 					}}
 				>
 					Load more
-				</Button>
+				</PrimaryButton>
 			</div>
-			{selectedBook && (
+			{/* {selectedBook && (
 				<AnimatePresence>
 					<motion.div onClick={()=> setSelectedBook(null)} className={styles.bookInfoBody}>
 						<BookInfo book={selectedBook} />
 					</motion.div>
 				</AnimatePresence>
-			)}
+			)} */}
 		</div>
 	)
 }
