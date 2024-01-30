@@ -6,7 +6,7 @@ import { VscSignOut } from 'react-icons/vsc'
 import styles from './ProfileInfo.module.scss'
 import Link from 'next/link'
 import { signOut, useSession } from 'next-auth/react'
-import PrimaryButton from '../ui/Buttons/PrimaryButton/PrimaryButton'
+import { PrimaryButton } from '../ui/Buttons'
 
 const ProfileInfo = () => {
 	const session = useSession()

@@ -3,7 +3,7 @@
 import BasketCard from '@/components/BasketCard/BasketCard'
 import styles from './page.module.scss'
 import { basketParams } from '@/constants'
-import Button from '@/components/ui/Button/Button'
+import { PrimaryButton } from '@/components/ui/Buttons'
 import { useAppDispatch, useAppSelector } from '@/redux/hooks'
 import { useEffect } from 'react'
 import { countTotalPrice } from '@/redux/features/books/booksSlice'
@@ -33,7 +33,7 @@ export default function ShopBasket() {
 			</div>
 			<div className={styles.checkOut}>
 				<div className={styles.totalPrice}>Total Price: {totalPrice}</div>
-				<Button func={() => {}}>Checkout</Button>
+				<PrimaryButton func={() => {}}>Checkout</PrimaryButton>
 			</div>
 		</div>
 	)
