@@ -3,7 +3,6 @@ import { Montserrat } from 'next/font/google'
 import './globals.scss'
 import TheHeader from '@/components/TheHeader/TheHeader'
 import Providers from '@/components/Providers/Providers'
-import StoreProvider from './StoreProvider'
 
 const montserrat = Montserrat({
 	subsets: ['latin', 'cyrillic'],
@@ -20,17 +19,16 @@ export default function RootLayout({
 }: {
 	children: React.ReactNode
 }) {
+	
 	return (
 		<html lang='en'>
 			<body className={montserrat.className}>
-				<StoreProvider>
-					<Providers>
-						<TheHeader />
-						<main>
-							<div className='container'>{children}</div>
-						</main>
-					</Providers>
-				</StoreProvider>
+				<Providers>
+					<TheHeader />
+					<main>
+						<div className='container'>{children}</div>
+					</main>
+				</Providers>
 			</body>
 		</html>
 	)

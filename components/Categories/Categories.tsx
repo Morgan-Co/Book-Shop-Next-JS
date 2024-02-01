@@ -2,7 +2,6 @@
 import { categories } from '@/constants'
 import { useAppDispatch, useAppSelector } from '@/redux/hooks'
 import { Montserrat } from 'next/font/google'
-import styles from './Categories.module.scss'
 import { setCategory } from '@/redux/features/categories/categorySlice'
 
 const montserrat = Montserrat({
@@ -15,8 +14,10 @@ const Categories = () => {
 	const dispatch = useAppDispatch()
 
 	return (
-		<div className={styles.categories}>
-			<ul>
+		<div
+			className={`absolute -left-[200px] -top-[40px] z-0 w-[416px] h-[710px] bg-[#efeef6] flex justify-center items-center`}
+		>
+			<ul className={`flex flex-col gap-y-[23px]`}>
 				{categories.map(item => {
 					const transformedCurrentItem = item.label
 						.replace(/\s/g, '')
@@ -27,16 +28,21 @@ const Categories = () => {
 					return (
 						<li
 							key={item.label}
-							className={`${styles.categoryItem} ${
+							className={`flex ${
 								transformedCurrentItem === transformedActiveItem &&
-								styles.activeItem
+								'relative before:content-[""] before:block before:w-[6px] before:h-[6px] before:bg-secondary-purple before:absolute before:-left-[15px] before:top-[5px] before:rounded-full'
 							}`}
 						>
 							<button
 								onClick={() => {
 									dispatch(setCategory(item.label))
 								}}
-								className={` ${montserrat.className}`}
+								className={`text-[14px] leading-[15px] bg-none border-none cursor-pointer text-gray w-full text-left font-medium transition-colors duration-200 ease hover:text-primary-purple ${
+									montserrat.className
+								} ${
+									transformedCurrentItem === transformedActiveItem &&
+									'text-[16px] text-dark-blue font-bold'
+								}`}
 								type='button'
 							>
 								{item.label}

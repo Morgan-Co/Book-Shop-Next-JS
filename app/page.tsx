@@ -1,8 +1,6 @@
 import Products from '@/components/Products/Products'
-import styles from './page.module.scss'
 import Categories from '@/components/Categories/Categories'
 import Slider from '@/components/Slider/Slider'
-
 
 /*
 	TODO:
@@ -37,7 +35,7 @@ export default function Home() {
 	return (
 		<>
 			<Slider />
-			<div className={styles.productSection}>
+			<div className='flex relative justify-end mb-[100px]'>
 				<Categories />
 				<Products />
 			</div>

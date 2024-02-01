@@ -1,5 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 * {
-	outline: 1px solid #4c3db2;
+	// outline: 1px solid #4c3db2;
 	margin: 0;
 	padding: 0;
 }

@@ -1,24 +1,17 @@
+'use client'
+
 import { Book } from '@/types/type'
 import { Open_Sans } from 'next/font/google'
 import Image from 'next/image'
 import styles from './Card.module.scss'
 import StarRating from '@/utils/StarRating'
 import { formatPrice } from '@/utils/formatPrice'
-import { motion } from 'framer-motion'
-import Link from 'next/link'
 import NoImage from '@/public/NoImage.png'
 import CardButton from './CardButton/CardButton'
-import { SetStateAction } from 'react'
 
 const openSans = Open_Sans({ subsets: ['latin', 'cyrillic'], weight: ['400'] })
 
-const Card = ({
-	book,
-	setSelectedId,
-}: {
-	book: Book
-	setSelectedId: React.Dispatch<SetStateAction<Book | null>>
-}) => {
+const Card = ({ book }: { book: Book }) => {
 	const image = book.volumeInfo.imageLinks
 		? book.volumeInfo.imageLinks.thumbnail
 		: NoImage
@@ -36,26 +29,26 @@ const Card = ({
 	const price = formatPrice(book)
 
 	return (
-		<motion.div
-			//  layoutId={book.id}
-			className={styles.card}
-		>
-			<div className={styles.left}>
+		<div className={`grid grid-cols-2 max-w-[424px] w-full h-[300px] bg-white`}>
+			<div className={`shadow-[0px_24px_36px_0px_#35315447;]`}>
 				<Image src={image} alt={head} width={212} height={300} />
 			</div>
-			<div className={styles.right}>
-				<div className={styles.content}>
+			<div className={`flex justify-end items-center w-full`}>
+				<div
+					className={`flex flex-col justify-between max-w-[176px] min-h-[203px]`}
+				>
 					<div
-					//  onClick={() => setSelectedId(book)}
-					 className={styles.title}
-					 >
-						<h6 className={`${styles.authors} ${openSans.className}`}>
+						className={`flex flex-col justify-between bg-none cursor-pointer`}
+					>
+						<h6
+							className={`text-[10px] leading-[14px] text-gray mb-[4px] text-start ${openSans.className}`}
+						>
 							{authors}
 						</h6>
-						<h4 className={styles.head}>{head}</h4>
+						<h4 className={`text-[16px] leading-[20px] font-bold text-dark-blue line-clamp-1 overflow-hidden text-ellipsis transition-colors duration-100 ease text-start`}>{head}</h4>
 					</div>
-					<div className={styles.rating}>
-						<div className={styles.averageRating}>
+					<div className={`flex gap-x-[6px]`}>
+						<div className={`text-star text-[12px] flex justify-center items-center`}>
 							<StarRating rating={averageRating} />
 						</div>
 						<div className={`${styles.ratingsCount} ${openSans.className}`}>
@@ -69,7 +62,7 @@ const Card = ({
 					<CardButton book={book} />
 				</div>
 			</div>
-		</motion.div>
+		</div>
 	)
 }
 

@@ -1,3 +1,4 @@
+'use client'
 import { PrimaryButton } from '@/components/ui/Buttons'
 import { addBookInBasket, deleteBookFromBasket } from '@/redux/features/books/booksSlice'
 import { useAppDispatch, useAppSelector } from '@/redux/hooks'

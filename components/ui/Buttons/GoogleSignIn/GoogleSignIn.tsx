@@ -1,12 +1,11 @@
 import { signIn } from 'next-auth/react'
 import { FaGoogle } from 'react-icons/fa'
-import styles from "../Buttons.module.scss"
 
 const GoogleSignIn = ({callbackUrl}: {callbackUrl: string}) => {
 	return (
 		<button
 			onClick={() => signIn('google', { callbackUrl })}
-			className={styles.googleButton}
+			className={`w-[32px] h-[32px] bg-google-red text-white border-none flex justify-center items-center cursor-pointer transition-colors ease duration-75 hover:bg-[#c23d31]`}
 			type='button'
 		>
 			<FaGoogle />
