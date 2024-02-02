@@ -13,8 +13,6 @@ const Products = () => {
 
 	useEffect(() => {
 		const fetchBooks = async () => {
-			console.log(category)
-
 			const { items } = await getBooks(category, 6)
 			setBooks(items)
 		}
