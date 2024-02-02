@@ -28,6 +28,7 @@ const Slider = () => {
 						alt={alt}
 						width={1120}
 						height={702}
+
 						priority
 					/>
 				))}

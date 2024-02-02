@@ -15,7 +15,7 @@ const Categories = () => {
 
 	return (
 		<div
-			className={`sm:block lg:absolute -left-[200px] -top-[40px] z-0 lg:w-[416px] lg:h-[710px] bg-[#efeef6] flex justify-center items-center w-full h-fit lg:p-0 px-3 py-5 mb-5`}
+			className={`sm:flex lg:absolute -left-[200px] -top-[40px] z-0 lg:w-[416px] lg:h-[710px] bg-[#efeef6] flex justify-center items-center w-full h-fit lg:p-0 px-3 py-5 mb-5`}
 		>
 			<ul
 				className={`flex lg:flex-col lg:gap-y-[23px] gap-x-[20px] gap-y-[20px] flex-wrap justify-center`}
@@ -45,7 +45,7 @@ const Categories = () => {
 								} transition-all duration-200 ease`}
 								type='button'
 								onClick={() => {
-									dispatch(setCategory(item.label))
+									dispatch(setCategory(transformedCurrentItem))
 								}}
 							>
 								{item.label}

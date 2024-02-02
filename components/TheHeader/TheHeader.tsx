@@ -1,5 +1,4 @@
 'use client'
-
 import Logo from '../../public/Logo.svg'
 import Image from 'next/image'
 import NavLinks from '../NavLinks/NavLinks'
@@ -9,7 +8,6 @@ import { GiHamburgerMenu } from 'react-icons/gi'
 import { useState } from 'react'
 import { useAppSelector } from '@/redux/hooks'
 import { GrCatalogOption } from 'react-icons/gr'
-import Categories from '../Categories/Categories'
 
 const TheHeader = () => {
 	const [isOpen, setIsOpen] = useState(false)
@@ -68,20 +66,6 @@ const TheHeader = () => {
 						onClick={() => setIsOpen(false)}
 						type='button'
 						className={`absolute top-[20px] right-[20px] w-[30px] h-[30px] cursor-pointer`}
-					>
-						<GrClose className={`w-full h-full`} />
-					</button>
-				</div>
-				<div
-					className={`${
-						isOpenCatalog ? 'translate-x-0 block' : 'translate-x-[9000px] hidden'
-					} sm:hidden block left-0 transition duration-500 ease w-full h-full absolute top-0 bg-white z-20`}
-				>
-					<Categories />
-					<button
-						onClick={() => setIsOpenCatalog(false)}
-						type='button'
-						className={`absolute top-[15px] right-[15px] w-[30px] h-[30px] cursor-pointer`}
 					>
 						<GrClose className={`w-full h-full`} />
 					</button>
