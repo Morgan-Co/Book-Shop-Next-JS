@@ -35,7 +35,7 @@ export default function Home() {
 	return (
 		<>
 			<Slider />
-			<div className='flex relative justify-end mb-[100px]'>
+			<div className='lg:flex relative justify-end mb-[100px]'>
 				<Categories />
 				<Products />
 			</div>

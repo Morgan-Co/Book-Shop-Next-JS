@@ -1,12 +1,14 @@
 'use client'
 import { PrimaryButton } from '@/components/ui/Buttons'
-import { addBookInBasket, deleteBookFromBasket } from '@/redux/features/books/booksSlice'
+import {
+	addBookInBasket,
+	deleteBookFromBasket,
+} from '@/redux/features/books/booksSlice'
 import { useAppDispatch, useAppSelector } from '@/redux/hooks'
 import { Book } from '@/types/type'
 import { useSession } from 'next-auth/react'
 import { Montserrat } from 'next/font/google'
 import React from 'react'
-import styles from "./CardButton.module.scss"
 import { togglePopup } from '@/redux/features/popup/popupSlice'
 import { formatPrice } from '@/utils/formatPrice'
 
@@ -15,7 +17,7 @@ const montserrat = Montserrat({
 	weight: ['700'],
 })
 
-const CardButton = ({book}: {book: Book}) => {
+const CardButton = ({ book }: { book: Book }) => {
 	const session = useSession()
 	const dispatch = useAppDispatch()
 	const price = formatPrice(book)
@@ -38,7 +40,7 @@ const CardButton = ({book}: {book: Book}) => {
 						onClick={() => {
 							dispatch(deleteBookFromBasket(book.id))
 						}}
-						className={`${styles.inTheCard} ${montserrat.className}`}
+						className={`w-[176px] h-[45px] border-[#eeedf5] border-[1px] border-solid ${montserrat.className}`}
 						type='button'
 					>
 						in the card
@@ -63,7 +65,11 @@ const CardButton = ({book}: {book: Book}) => {
 			{price !== 'no price' ? (
 				InCart()
 			) : (
-				<div className={styles.notForSale}>NOT FOR SALE</div>
+				<div
+					className={`max-w-full h-[45px] border-[#eeedf5] border-[1px] border-solid text-[8px] font-bold leading-[10px] bg-none text-red flex justify-center items-center`}
+				>
+					NOT FOR SALE
+				</div>
 			)}
 		</>
 	)

@@ -3,7 +3,6 @@
 import { Book } from '@/types/type'
 import { Open_Sans } from 'next/font/google'
 import Image from 'next/image'
-import styles from './Card.module.scss'
 import StarRating from '@/utils/StarRating'
 import { formatPrice } from '@/utils/formatPrice'
 import NoImage from '@/public/NoImage.png'
@@ -51,14 +50,14 @@ const Card = ({ book }: { book: Book }) => {
 						<div className={`text-star text-[12px] flex justify-center items-center`}>
 							<StarRating rating={averageRating} />
 						</div>
-						<div className={`${styles.ratingsCount} ${openSans.className}`}>
+						<div className={`text-[10px] leading-[14px] text-gray ${openSans.className}`}>
 							{ratingsCount}
 						</div>
 					</div>
-					<p className={`${styles.description} ${openSans.className}`}>
+					<p className={`text-[10px] leading-[14px] text-gray capitalize line-clamp-3 overflow-hidden text-ellipsis ${openSans.className}`}>
 						{description}
 					</p>
-					<div className={styles.price}>{price}</div>
+					<div className={`text-[13px] font-bold leading-[16px] text-dark-blue`}>{price}</div>
 					<CardButton book={book} />
 				</div>
 			</div>

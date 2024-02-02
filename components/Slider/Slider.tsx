@@ -19,7 +19,7 @@ const Slider = () => {
 
 	return (
 		<div className='mb-[88px]'>
-			<div className='flex overflow-hidden max-w-[1120px] w-full h-[702px] relative'>
+			<div className='flex overflow-hidden max-w-[1120px] w-full h-auto relative'>
 				{sliderImages.map(({ src, alt }) => (
 					<Image
 						key={alt}
@@ -28,6 +28,7 @@ const Slider = () => {
 						alt={alt}
 						width={1120}
 						height={702}
+						priority
 					/>
 				))}
 			</div>

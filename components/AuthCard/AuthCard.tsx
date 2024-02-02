@@ -1,5 +1,4 @@
 'use client'
-import styles from './AuthCard.module.scss'
 import { signIn } from 'next-auth/react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { SubmitHandler, useForm } from 'react-hook-form'
@@ -33,20 +32,37 @@ const AuthCard = () => {
 	}
 
 	return (
-		<div className={styles.authCard}>
-			<div className={styles.content}>
-				<h3 className={styles.title}>Log in</h3>
-				<form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
-					<label className={styles.label} htmlFor='email'>
+		<div
+			className={`w-[241px] h-[312px] flex justify-center shadow-[0px_4px_4px_0px_#00000040] bg-white`}
+		>
+			<div className={`h-[250px] relative mt-[7px]`}>
+				<h3
+					className={`text-[16px] font-bold leading-[20px] text-dark-blue text-center mb-[14px]`}
+				>
+					Log in
+				</h3>
+				<form
+					onSubmit={handleSubmit(onSubmit)}
+					className={`flex flex-col items-center`}
+				>
+					<label
+						className={`text-[12px] font-bold leading-[15px] text-black cursor-pointer mx-auto mt-[15px] block`}
+						htmlFor='email'
+					>
 						Email
 						<EmailInput errors={errors} register={register} />
 					</label>
-					<label className={styles.label} htmlFor='password'>
+					<label
+						className={`text-[12px] font-bold leading-[15px] text-black cursor-pointer mx-auto mt-[15px] block`}
+						htmlFor='password'
+					>
 						Password
 						<PasswordInput errors={errors} register={register} />
 					</label>
 					<ErrorMessage errors={errors} />
-					<div className={styles.signButtons}>
+					<div
+						className={`flex justify-between max-w-[176px] w-full absolute bottom-0`}
+					>
 						<SignInButton>Log In</SignInButton>
 						<GoogleSignIn callbackUrl={callbackUrl} />
 					</div>

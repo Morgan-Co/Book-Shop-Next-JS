@@ -15,9 +15,11 @@ const Categories = () => {
 
 	return (
 		<div
-			className={`absolute -left-[200px] -top-[40px] z-0 w-[416px] h-[710px] bg-[#efeef6] flex justify-center items-center`}
+			className={`sm:block lg:absolute -left-[200px] -top-[40px] z-0 lg:w-[416px] lg:h-[710px] bg-[#efeef6] flex justify-center items-center w-full h-fit lg:p-0 px-3 py-5 mb-5`}
 		>
-			<ul className={`flex flex-col gap-y-[23px]`}>
+			<ul
+				className={`flex lg:flex-col lg:gap-y-[23px] gap-x-[20px] gap-y-[20px] flex-wrap justify-center`}
+			>
 				{categories.map(item => {
 					const transformedCurrentItem = item.label
 						.replace(/\s/g, '')
@@ -30,20 +32,21 @@ const Categories = () => {
 							key={item.label}
 							className={`flex ${
 								transformedCurrentItem === transformedActiveItem &&
-								'relative before:content-[""] before:block before:w-[6px] before:h-[6px] before:bg-secondary-purple before:absolute before:-left-[15px] before:top-[5px] before:rounded-full'
+								'before:lg:block relative before:content-[""] before:hidden before:w-[6px] before:h-[6px] before:bg-secondary-purple before:absolute before:-left-[15px] before:top-[5px] before:rounded-full'
 							}`}
 						>
 							<button
+								className={`leading-[15px] bg-none border-none cursor-pointer w-full text-left hover:text-primary-purple ${
+									montserrat.className
+								} ${
+									transformedCurrentItem === transformedActiveItem
+										? 'text-[16px] text-dark-blue lg:font-bold'
+										: 'lg:text-[14px] text-gray font-medium text-[16px]'
+								} transition-all duration-200 ease`}
+								type='button'
 								onClick={() => {
 									dispatch(setCategory(item.label))
 								}}
-								className={`text-[14px] leading-[15px] bg-none border-none cursor-pointer text-gray w-full text-left font-medium transition-colors duration-200 ease hover:text-primary-purple ${
-									montserrat.className
-								} ${
-									transformedCurrentItem === transformedActiveItem &&
-									'text-[16px] text-dark-blue font-bold'
-								}`}
-								type='button'
 							>
 								{item.label}
 							</button>

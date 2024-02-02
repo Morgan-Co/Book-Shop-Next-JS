@@ -12,17 +12,19 @@ const UserSection = () => {
 	const { isOpen } = useAppSelector(state => state.popup)
 	const [isCursorOverPopup, setCursorOverPopup] = useState<boolean>(false)
 	const session = useSession()
-	// useEffect(() => {
-	// 	if (!isCursorOverPopup && isOpen) {
-	// 		const timeout = setTimeout(() => {
-	// 			dispatch(togglePopup())
-	// 		}, 2000)
+	useEffect(() => {
+		if (!isCursorOverPopup && isOpen) {
+			console.log('not on')
 
-	// 		return () => {
-	// 			clearTimeout(timeout)
-	// 		}
-	// 	}
-	// }, [isCursorOverPopup, isOpen, dispatch])
+			const timeout = setTimeout(() => {
+				dispatch(togglePopup())
+			}, 2000)
+
+			return () => {
+				clearTimeout(timeout)
+			}
+		}
+	}, [isCursorOverPopup, isOpen, dispatch])
 
 	return (
 		<div className={`flex w-[121px] justify-between relative`}>
@@ -34,9 +36,15 @@ const UserSection = () => {
 						initial={{ opacity: 0, translateY: '50px' }}
 						animate={{ opacity: 1, translateY: 0 }}
 						exit={{ opacity: 0 }}
-						className='absolute top-[35px] -left-[115px] z-[2]'
-						onMouseEnter={() => setCursorOverPopup(true)}
-						onMouseLeave={() => setCursorOverPopup(false)}
+						className='absolute top-[35px] -left-[115px] z-[20]'
+						onMouseEnter={() => {
+							console.log('on')
+							setCursorOverPopup(true)
+						}}
+						onMouseLeave={() => {
+							console.log('off')
+							setCursorOverPopup(false)
+						}}
 					>
 						<AuthCard />
 					</motion.div>
