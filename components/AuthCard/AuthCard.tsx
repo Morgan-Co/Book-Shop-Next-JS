@@ -1,5 +1,5 @@
 'use client'
-import { signIn } from 'next-auth/react'
+import { signIn, useSession } from 'next-auth/react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { EmailInput, PasswordInput } from '../ui/Inputs'
@@ -11,6 +11,8 @@ const AuthCard = () => {
 	const searchParams = useSearchParams()
 	const callbackUrl = searchParams.get('callbackUrl') || '/profile'
 	const router = useRouter()
+	console.log(useSession());
+	
 
 	const {
 		register,
