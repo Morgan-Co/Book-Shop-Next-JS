@@ -38,11 +38,9 @@ const UserSection = () => {
 						exit={{ opacity: 0 }}
 						className='absolute top-[35px] -left-[115px] z-[20]'
 						onMouseEnter={() => {
-							console.log('on')
 							setCursorOverPopup(true)
 						}}
 						onMouseLeave={() => {
-							console.log('off')
 							setCursorOverPopup(false)
 						}}
 					>

@@ -11,7 +11,6 @@ const AuthCard = () => {
 	const searchParams = useSearchParams()
 	const callbackUrl = searchParams.get('callbackUrl') || '/profile'
 	const router = useRouter()
-	console.log(useSession());
 	
 
 	const {
