@@ -3,7 +3,6 @@ import { Montserrat } from 'next/font/google'
 import './globals.scss'
 import TheHeader from '@/components/TheHeader/TheHeader'
 import Providers from '@/components/Providers/Providers'
-import { Session } from 'next-auth'
 
 const montserrat = Montserrat({
 	subsets: ['latin', 'cyrillic'],

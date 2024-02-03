@@ -9,7 +9,7 @@ const Providers = ({ children }: { children: React.ReactNode }) => {
 	return (
 		<Provider store={store}>
 			<PersistGate persistor={persistor}>
-				<SessionProvider>{children}</SessionProvider>
+				<SessionProvider >{children}</SessionProvider>
 			</PersistGate>
 		</Provider>
 	)
