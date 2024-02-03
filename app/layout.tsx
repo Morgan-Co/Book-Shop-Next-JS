@@ -3,6 +3,7 @@ import { Montserrat } from 'next/font/google'
 import './globals.scss'
 import TheHeader from '@/components/TheHeader/TheHeader'
 import Providers from '@/components/Providers/Providers'
+import { Session } from 'next-auth'
 
 const montserrat = Montserrat({
 	subsets: ['latin', 'cyrillic'],
@@ -16,10 +17,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
 	children,
+	
 }: {
 	children: React.ReactNode
 }) {
-	
 	return (
 		<html lang='en'>
 			<body className={montserrat.className}>
