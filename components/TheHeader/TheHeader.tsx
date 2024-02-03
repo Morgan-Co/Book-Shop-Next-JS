@@ -59,9 +59,6 @@ const TheHeader = () => {
 							<NavLinks />
 						</ul>
 					</nav>
-					<div className={`h-fit`}>
-						<UserSection />
-					</div>
 					<button
 						onClick={() => setIsOpen(false)}
 						type='button'
