@@ -14,11 +14,15 @@ export default {
 			},
 			async authorize(credentials) {
 				if (!credentials?.email || !credentials.password) return null
-				const currentUser = users.find(user => user.email === credentials.email)
-				if (currentUser && currentUser.password === credentials.password) {
-					const { password, ...userWithoutPass } = currentUser
-					return userWithoutPass as User
-				}
+				// const currentUser = users.find(user => user.email === credentials.email)
+				// if (currentUser && currentUser.password === credentials.password) {
+					// const { password, ...userWithoutPass } = currentUser
+					const user = {
+						email: credentials.email,
+						name: ''
+					}
+					return user as User
+				// }
 				return null
 			},
 		}),
