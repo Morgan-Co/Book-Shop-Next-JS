@@ -40,7 +40,7 @@ const CardButton = ({ book }: { book: Book }) => {
 						onClick={() => {
 							dispatch(deleteBookFromBasket(book.id))
 						}}
-						className={`w-[176px] h-[45px] border-[#eeedf5] border-[1px] border-solid ${montserrat.className}`}
+						className={`w-[176px] h-[45px] border-[#eeedf5] font-bold uppercase text-[8px] leading-[9.75px] text-gray border-[1px] border-solid ${montserrat.className}`}
 						type='button'
 					>
 						in the card
